@@ -1,8 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
+
 import Link from "next/link";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
@@ -25,7 +24,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 
-// ✅ Zod schema for signup validation
+
 const signupSchema = z
   .object({
     email: z.string().email("Invalid email address"),
@@ -48,12 +47,7 @@ export default function Signup() {
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false); // ⬅️ loading state
 
-  useEffect(() => {
-    AOS.init({
-      duration: 800,
-      once: true,
-    });
-  }, []);
+
 
   const form = useForm<SignupFormValues>({
     resolver: zodResolver(signupSchema),
@@ -70,18 +64,7 @@ export default function Signup() {
     try {
       console.log("Signup Data:", data);
 
-      // Example API call (replace with your endpoint)
-      /*
-      const res = await fetch("/api/signup", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      });
-
-      if (!res.ok) throw new Error("Signup failed");
-      const result = await res.json();
-      console.log("Signup success:", result);
-      */
+     
     } catch (error) {
       console.error("Signup error:", error);
     } finally {
@@ -93,7 +76,8 @@ export default function Signup() {
     <div className="flex justify-center items-center h-screen w-screen bg-black">
       <Card
         className="w-full max-w-sm rounded-2xl shadow-xl bg-white/10 backdrop-blur-md border border-white/20"
-        data-aos="flip-left"
+       
+
       >
         <CardHeader>
           <CardTitle className="text-3xl font-bold text-white text-center">

@@ -1,9 +1,8 @@
 "use client";
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import AOS from "aos";
-import "aos/dist/aos.css";
-// shadcn/ui
+
+
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -14,12 +13,12 @@ import {
   CardFooter,
 } from "@/components/ui/card";
 
-// form + zod
+
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 
-// ✅ Zod schema
+
 const LoginSchema = z.object({
   email: z.string().email("Enter a valid email"),
   password: z.string().min(6, "Password must be at least 6 characters"),
@@ -31,13 +30,8 @@ export default function Login() {
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false); // ⬅️ loading state
 
-  // AOS init
-  useEffect(() => {
-    AOS.init({
-      duration: 800,
-      once: true,
-    });
-  }, []);
+
+
 
   // react-hook-form
   const {
@@ -57,18 +51,7 @@ export default function Login() {
     try {
       console.log("Login Data:", data);
 
-      // Example API call (replace with your endpoint)
-      /*
-      const res = await fetch("/api/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      });
-
-      if (!res.ok) throw new Error("Login failed");
-      const result = await res.json();
-      console.log("Login success:", result);
-      */
+      
     } catch (error) {
       console.error("Login error:", error);
     } finally {
@@ -81,7 +64,7 @@ export default function Login() {
       {/* Login Card */}
       <Card
         className="w-full max-w-sm bg-white/10 backdrop-blur-md border border-white/20 text-white shadow-xl"
-        data-aos="flip-left"
+    
       >
         <CardHeader>
           <CardTitle className="text-3xl text-center">Login</CardTitle>
