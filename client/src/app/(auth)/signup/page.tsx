@@ -73,14 +73,14 @@ export default function Signup() {
   };
 
   return (
-    <div className="flex justify-center items-center h-screen w-screen bg-black">
+    <div className="flex justify-center items-center h-screen w-screen bg-white">
       <Card
         className="w-full max-w-sm rounded-2xl shadow-xl bg-white/10 backdrop-blur-md border border-white/20"
        
 
       >
         <CardHeader>
-          <CardTitle className="text-3xl font-bold text-white text-center">
+          <CardTitle className="text-3xl font-bold text-black text-center">
             Sign Up
           </CardTitle>
         </CardHeader>
@@ -96,12 +96,12 @@ export default function Signup() {
                 name="email"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel className="text-white">Email</FormLabel>
+                    <FormLabel className="text-black">Email</FormLabel>
                     <FormControl>
                       <Input
                         type="email"
                         placeholder="Enter your email"
-                        className="bg-white/20 text-white placeholder-gray-300"
+                        className="bg-white/20 text-black placeholder-gray-300"
                         {...field}
                       />
                     </FormControl>
@@ -116,12 +116,12 @@ export default function Signup() {
                 name="username"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel className="text-white">Username</FormLabel>
+                    <FormLabel className="text-black">Username</FormLabel>
                     <FormControl>
                       <Input
                         type="text"
                         placeholder="Enter your username"
-                        className="bg-white/20 text-white placeholder-gray-300"
+                        className="bg-white/20 text-black placeholder-gray-300"
                         {...field}
                       />
                     </FormControl>
@@ -136,13 +136,13 @@ export default function Signup() {
                 name="password"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel className="text-white">Password</FormLabel>
+                    <FormLabel className="text-black">Password</FormLabel>
                     <FormControl>
                       <div className="relative">
                         <Input
                           type={showPassword ? "text" : "password"}
                           placeholder="Enter your password"
-                          className="bg-white/20 text-white placeholder-gray-300 pr-10"
+                          className="bg-white/20 text-black placeholder-gray-300 pr-10"
                           {...field}
                         />
                         <button
@@ -165,13 +165,13 @@ export default function Signup() {
                 name="confirmPassword"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel className="text-white">Confirm Password</FormLabel>
+                    <FormLabel className="text-black">Confirm Password</FormLabel>
                     <FormControl>
                       <div className="relative">
                         <Input
                           type={showConfirmPassword ? "text" : "password"}
                           placeholder="Confirm your password"
-                          className="bg-white/20 text-white placeholder-gray-300 pr-10"
+                          className="bg-white/20 text-black placeholder-gray-300 pr-10"
                           {...field}
                         />
                         <button

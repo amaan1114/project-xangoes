@@ -1,4 +1,5 @@
 "use client";
+
 import { useState, useEffect } from "react";
 import Link from "next/link";
 
@@ -60,10 +61,11 @@ export default function Login() {
   };
 
   return (
-    <div className="flex justify-center items-center h-screen w-screen bg-black">
+   
+    <div className="flex justify-center items-center h-screen w-screen bg-white">
       {/* Login Card */}
       <Card
-        className="w-full max-w-sm bg-white/10 backdrop-blur-md border border-white/20 text-white shadow-xl"
+        className="w-full max-w-sm bg-white/10 backdrop-blur-md border border-white/20 text-black shadow-xl"
     
       >
         <CardHeader>
@@ -82,7 +84,7 @@ export default function Login() {
                 type="email"
                 placeholder="Email"
                 {...register("email")}
-                className="bg-white/20 text-white placeholder-gray-300 border-none focus-visible:ring-blue-500"
+                className="bg-white/20 text-black placeholder-gray-300 border-none focus-visible:ring-blue-500"
               />
               {errors.email && (
                 <p className="text-red-400 text-sm mt-1">
@@ -97,7 +99,7 @@ export default function Login() {
                 type={showPassword ? "text" : "password"}
                 placeholder="Password"
                 {...register("password")}
-                className="bg-white/20 text-white placeholder-gray-300 border-none focus-visible:ring-blue-500 pr-12"
+                className="bg-white/20 text-black placeholder-gray-300 border-none focus-visible:ring-blue-500 pr-12"
               />
               <Button
                 type="button"
